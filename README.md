@@ -9,85 +9,93 @@
   </picture>
 </p>
 
-# Document-to-podcast: a Blueprint by Mozilla.ai for generating podcasts from documents using local AI
+# Document-to-Speech: a Blueprint by Mozilla.ai for converting documents to natural speech using local AI
 
 [![](https://dcbadge.limes.pink/api/server/YuMNeuKStr?style=flat)](https://discord.gg/YuMNeuKStr)
-[![Docs](https://github.com/mozilla-ai/document-to-podcast/actions/workflows/docs.yaml/badge.svg)](https://github.com/mozilla-ai/document-to-podcast/actions/workflows/docs.yaml/)
-[![Tests](https://github.com/mozilla-ai/document-to-podcast/actions/workflows/tests.yaml/badge.svg)](https://github.com/mozilla-ai/document-to-podcast/actions/workflows/tests.yaml/)
-[![Ruff](https://github.com/mozilla-ai/document-to-podcast/actions/workflows/lint.yaml/badge.svg?label=Ruff)](https://github.com/mozilla-ai/document-to-podcast/actions/workflows/lint.yaml/)
+[![Docs](https://github.com/mozilla-ai/document-to-speech/actions/workflows/docs.yaml/badge.svg)](https://github.com/mozilla-ai/document-to-speech/actions/workflows/docs.yaml/)
+[![Tests](https://github.com/mozilla-ai/document-to-speech/actions/workflows/tests.yaml/badge.svg)](https://github.com/mozilla-ai/document-to-speech/actions/workflows/tests.yaml/)
+[![Ruff](https://github.com/mozilla-ai/document-to-speech/actions/workflows/lint.yaml/badge.svg?label=Ruff)](https://github.com/mozilla-ai/document-to-speech/actions/workflows/lint.yaml/)
 
-This blueprint demonstrate how you can use open-source models & tools to convert input documents into a podcast featuring two speakers.
+This blueprint demonstrates how you can use open-source models & tools to convert input documents into natural-sounding speech.
 It is designed to work on most local setups, meaning no external API calls or GPU access is required.
 This makes it more accessible and privacy-friendly by keeping everything local.
 
-<img src="./images/document-to-podcast-diagram.png" width="1200" alt="document-to-podcast Diagram" />
+<img src="./images/document-to-speech-diagram.png" width="1200" alt="document-to-speech Diagram" />
 
-📘 To explore this project further and discover other Blueprints, visit the [**Blueprints Hub**](https://developer-hub.mozilla.ai/blueprints/create-your-own-tailored-podcast-using-your-documents).
+📘 To explore this project further and discover other Blueprints, visit the [**Blueprints Hub**](https://developer-hub.mozilla.ai/blueprints/create-your-own-speech-from-documents).
 
-## Example Results
+## Features
 
-- [Introducing Blueprints](https://blog.mozilla.ai/introducing-blueprints-customizable-ai-workflows-for-developers/)
+- Convert various document formats (PDF, HTML, TXT, DOCX, MD) to speech
+- Support for both American and British English voices
+- Multiple voice profiles (male and female options)
+- Text optimization for better speech output
+- Adjustable speech parameters (speed, volume)
+- Local LLM support for text optimization
+- Optional cloud-based optimization via OpenRouter
+- User-friendly Streamlit interface
 
-https://github.com/user-attachments/assets/0487640b-a800-4c60-96ae-f1b93632a87b
-
-- [Attention is All You Need](https://arxiv.org/pdf/1706.03762)
-
-https://github.com/user-attachments/assets/0d5364e7-a57b-4976-8cb6-4ebf1cbbd37c
-
----
-
-### 👉 📖 For more detailed guidance on using this project, please visit our [Docs](https://mozilla-ai.github.io/document-to-podcast/).
+### 👉 📖 For more detailed guidance on using this project, please visit our [Docs](https://mozilla-ai.github.io/document-to-speech/).
 ### 👉 🔨 Built with
-- Python 3.10+ (use Python 3.12 for Apple M1/2/3 chips)
+- Python 3.10+ (use Python 3.10-3.12 for compatibility)
 - [Llama-cpp](https://github.com/abetlen/llama-cpp-python)
 - [Streamlit](https://streamlit.io/) (UI demo)
-
-### 👉 🧠 Check the [Supported Models](https://mozilla-ai.github.io/document-to-podcast/customization/#supported-models).
+- [Kokoro TTS](https://github.com/hexgrad/kokoro) (Text-to-Speech)
 
 ## Quick-start
 
-Get started right away using one of the options below:
+Get started right away using the Streamlit interface:
 
-| Google Colab | HuggingFace Spaces  | GitHub Codespaces |
-| -------------| ------------------- | ----------------- |
-| [![Try on Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mozilla-ai/document-to-podcast/blob/main/demo/notebook.ipynb) | [![Try on Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Try%20on-Spaces-blue)](https://huggingface.co/spaces/mozilla-ai/document-to-podcast) | [![Try on Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=888426876&skip_quickstart=true&machine=standardLinux32gb) |
+```bash
+# Clone the repository
+git clone https://github.com/mozilla-ai/document-to-speech.git
+cd document-to-speech
 
-You can also install and use the blueprint locally:
+# Create and activate virtual environment (Python 3.10 recommended)
+python3.10 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install the package
+pip install -e .
+
+# Launch the Streamlit app
+python -m streamlit run demo/app.py
+```
 
 ### Command Line Interface
 
+For command-line usage:
+
 ```bash
-pip install document-to-podcast
+pip install document-to-speech
 ```
 
 ```bash
-document-to-podcast \
---input_file "example_data/Mozilla-Trustworthy_AI.pdf" \
---output_folder "example_data"
---text_to_text_model "Qwen/Qwen2.5-1.5B-Instruct-GGUF/qwen2.5-1.5b-instruct-q8_0.gguf"
-```
-
-### Graphical Interface App
-
-```bash
-git clone https://github.com/mozilla-ai/document-to-podcast.git
-cd document-to-podcast
-pip install -e .
-```
-
-```bash
-python -m streamlit run demo/app.py
+document-to-speech \
+--input_file "example_data/example.pdf" \
+--output_file "output.wav" \
+--voice_profile "am_michael" \
+--speed 1.0 \
+--volume 1.0
 ```
 
 ## System requirements
   - OS: Windows, macOS, or Linux
-  - Python 3.10+ / 3.12+ for Apple M chips
+  - Python: >= 3.10, < 3.13
   - Minimum RAM: 8 GB
-  - Disk space: 20 GB minimum
+  - Disk space: 10 GB minimum
+
+## Voice Profiles
+
+Available voice profiles:
+- American English (Female): af_sarah, af_bella, af_grace
+- American English (Male): am_michael, am_james, am_john
+- British English (Female): bf_sarah, bf_bella, bf_grace
+- British English (Male): bm_michael, bm_james, bm_john
 
 ## Troubleshooting
 
-If you are having issues / bugs, check our [Troubleshooting](https://mozilla-ai.github.io/document-to-podcast/getting-started/#troubleshooting) section, before opening a new issue.
+If you are having issues / bugs, check our [Troubleshooting](https://mozilla-ai.github.io/document-to-speech/getting-started/#troubleshooting) section, before opening a new issue.
 
 ## License
 
