@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=48", "setuptools_scm[toml]>=6.3.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "document-to-podcast"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10,<3.13"
+dynamic = ["version"]
+dependencies = [
+  "beautifulsoup4",
+  "fire",
+  "httpx",
+  "huggingface-hub",
+  "kokoro>=0.7.9",
+  "llama-cpp-python",
+  "loguru",
+  "pydantic",
+  "PyPDF2[crypto]",
+  "python-docx",
+  "soundfile",
+  "streamlit",
+]
+
+[project.optional-dependencies]
+docs = [
+  "mkdocs",
+  "mkdocs-material",
+  "mkdocstrings-python",
+]
+
+tests = [
+  "pytest>=8,<9",
+  "pytest-sugar>=0.9.6",
+  "pytest-mock>=3.14.0"
+]
+
+[project.urls]
+Documentation = "https://mozilla-ai.github.io/document-to-podcast/"
+Issues = "https://github.com/mozilla-ai/document-to-podcast/issues"
+Source = "https://github.com/mozilla-ai/document-to-podcast"
+
+[tool.setuptools.packages.find]
+exclude = ["tests", "tests.*"]
+where = ["src"]
+namespaces = false
+
+[tool.setuptools_scm]
+
+[project.scripts]
+document-to-podcast = "document_to_podcast.cli:main"
