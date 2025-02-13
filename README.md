@@ -35,6 +35,8 @@ This makes it more accessible and privacy-friendly by keeping everything local.
 - Optional cloud-based optimization via OpenRouter
 - User-friendly Streamlit interface
 
+<img src="./images/doctospeech-screenshot.jpeg" width="800" alt="Document-to-Speech Interface Screenshot" />
+
 ### 👉 📖 For more detailed guidance on using this project, please visit our [Docs](https://alexmeckes.github.io/Document-To-Speech/).
 ### 👉 🔨 Built with
 - Python 3.10+ (use Python 3.10-3.12 for compatibility)
