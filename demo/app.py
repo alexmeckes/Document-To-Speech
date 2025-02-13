@@ -8,15 +8,15 @@ import numpy as np
 import soundfile as sf
 import streamlit as st
 
-from document_to_podcast.inference.text_to_speech import text_to_speech
-from document_to_podcast.preprocessing import DATA_LOADERS, DATA_CLEANERS
-from document_to_podcast.inference.model_loaders import (
+from document_to_speech.inference.text_to_speech import text_to_speech
+from document_to_speech.preprocessing import DATA_LOADERS, DATA_CLEANERS
+from document_to_speech.inference.model_loaders import (
     load_llama_cpp_model,
     load_tts_model,
 )
-from document_to_podcast.config import DEFAULT_PROMPT, SpeechParams, TextOptimizationModel, Config
-from document_to_podcast.inference.text_optimizer import optimize_text
-from document_to_podcast.inference.openrouter_optimizer import get_available_models
+from document_to_speech.config import DEFAULT_PROMPT, SpeechParams, TextOptimizationModel, Config
+from document_to_speech.inference.text_optimizer import optimize_text
+from document_to_speech.inference.openrouter_optimizer import get_available_models
 
 # Initialize session state for OpenRouter models
 if "openrouter_models" not in st.session_state:

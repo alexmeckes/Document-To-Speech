@@ -21,11 +21,11 @@ For example: `Qwen/Qwen2.5-1.5B-Instruct-GGUF/qwen2.5-1.5b-instruct-q8_0.gguf`.
 
 The model used to generate the audio from the podcast script.
 
-You can use any of the models listed in [`TTS_LOADERS`](api.md/#document_to_podcast.inference.model_loaders.TTS_LOADERS) out of the box.
+You can use any of the models listed in [`TTS_LOADERS`](api.md/#document_to_speech.inference.model_loaders.TTS_LOADERS) out of the box.
 We currently support [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M).
 
-If you want to use a different model, you can integrate it by implementing the `_load` and `_text_to_speech` functions and registering them in [`TTS_LOADERS`](api.md/#document_to_podcast.inference.model_loaders.TTS_LOADERS) and [`TTS_INFERENCE`](api.md/#document_to_podcast.inference.text_to_speech.TTS_INFERENCE).
-You can check [this repo](https://github.com/Kostis-S-Z/document-to-podcast/) where different text-to-speech models are integrated.
+If you want to use a different model, you can integrate it by implementing the `_load` and `_text_to_speech` functions and registering them in [`TTS_LOADERS`](api.md/#document_to_speech.inference.model_loaders.TTS_LOADERS) and [`TTS_INFERENCE`](api.md/#document_to_speech.inference.text_to_speech.TTS_INFERENCE).
+You can check [this repo](https://github.com/Kostis-S-Z/document-to-speech/) where different text-to-speech models are integrated.
 
 ## 🖋️ **Other Customizable Parameters**
 
@@ -42,7 +42,7 @@ If you’re running the pipeline from the command line, you can customize the pa
 
 Running in the CLI:
 ```bash
-document-to-podcast --from_config example_data/config.yaml
+document-to-speech --from_config example_data/config.yaml
 ```
 
 ### Steps to Customize
@@ -95,7 +95,7 @@ Looking for inspiration? Check out these examples of how others have customized 
 
 - **[Radio Drama Generator](https://github.com/stefanfrench/radio-drama-generator)**: A creative adaptation that generates radio dramas by customizing ng the Blueprint parameters.
 - **[Readme-to-Podcast](https://github.com/alexmeckes/readme-to-podcast)**: This project transforms GitHub README files into podcast-style audio, showcasing the Blueprint’s ability to handle diverse text inputs.
-- **[Multilingual Podcast](https://github.com/Kostis-S-Z/document-to-podcast/)**: A repo that showcases how to use this package in other languages, like Hindi, Polish, Korean and many more.
+- **[Multilingual Podcast](https://github.com/Kostis-S-Z/document-to-speech/)**: A repo that showcases how to use this package in other languages, like Hindi, Polish, Korean and many more.
 
 ## 🤝 **Contributing to the Blueprint**
 

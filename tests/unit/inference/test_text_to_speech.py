@@ -1,7 +1,7 @@
 from kokoro import KPipeline
 
-from document_to_podcast.inference.model_loaders import TTSModel
-from document_to_podcast.inference.text_to_speech import text_to_speech
+from document_to_speech.inference.model_loaders import TTSModel
+from document_to_speech.inference.text_to_speech import text_to_speech
 
 
 def test_text_to_speech_kokoro(mocker):

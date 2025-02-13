@@ -6,17 +6,17 @@ import yaml
 from fire import Fire
 from loguru import logger
 
-from document_to_podcast.config import (
+from document_to_speech.config import (
     Config,
     DEFAULT_PROMPT,
 )
-from document_to_podcast.inference.model_loaders import (
+from document_to_speech.inference.model_loaders import (
     load_llama_cpp_model,
     load_tts_model,
 )
-from document_to_podcast.inference.text_to_speech import text_to_speech
-from document_to_podcast.inference.text_optimizer import optimize_text
-from document_to_podcast.preprocessing import DATA_CLEANERS, DATA_LOADERS
+from document_to_speech.inference.text_to_speech import text_to_speech
+from document_to_speech.inference.text_optimizer import optimize_text
+from document_to_speech.preprocessing import DATA_CLEANERS, DATA_LOADERS
 
 
 @logger.catch(reraise=True)

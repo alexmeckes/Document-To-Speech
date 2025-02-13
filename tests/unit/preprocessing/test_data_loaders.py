@@ -1,4 +1,4 @@
-from document_to_podcast.preprocessing.data_loaders import (
+from document_to_speech.preprocessing.data_loaders import (
     load_pdf,
     load_txt,
     load_docx,

@@ -1,4 +1,4 @@
-from document_to_podcast.preprocessing import DATA_CLEANERS
+from document_to_speech.preprocessing import DATA_CLEANERS
 import pytest
 import requests
 from bs4 import BeautifulSoup

@@ -1,4 +1,4 @@
-from document_to_podcast.cli import document_to_podcast
+from document_to_speech.cli import document_to_speech
 
 EXAMPLE_INPUT = """
 ### Mozilla's approach to trustworthy AI
@@ -25,10 +25,10 @@ and nurturing a more equitable computing environment.
 """
 
 
-def test_document_to_podcast(tmp_path):
+def test_document_to_speech(tmp_path):
     input_file = tmp_path / "input_file.md"
     input_file.write_text(EXAMPLE_INPUT)
-    document_to_podcast(
+    document_to_speech(
         input_file=str(input_file),
         output_folder=str(tmp_path / "output"),
         text_to_text_model="bartowski/SmolLM2-1.7B-Instruct-GGUF/SmolLM2-1.7B-Instruct-f16.gguf",

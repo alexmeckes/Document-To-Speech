@@ -6,9 +6,9 @@ from enum import Enum
 from pydantic import BaseModel, FilePath
 from pydantic.functional_validators import AfterValidator
 
-from document_to_podcast.inference.model_loaders import TTS_LOADERS
-from document_to_podcast.types import SpeechParams
-from document_to_podcast.preprocessing import DATA_LOADERS
+from document_to_speech.inference.model_loaders import TTS_LOADERS
+from document_to_speech.types import SpeechParams
+from document_to_speech.preprocessing import DATA_LOADERS
 
 
 DEFAULT_PROMPT = """

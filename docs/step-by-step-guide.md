@@ -34,7 +34,7 @@ Cleaner input data ensures that the model works with reliable and consistent inf
 
  **1 - File Loading**
 
-   - Uses functions defined in [`data_loaders.py`](api.md/#document_to_podcast.preprocessing.data_loaders)
+   - Uses functions defined in [`data_loaders.py`](api.md/#document_to_speech.preprocessing.data_loaders)
 
    - Supports `.html`, `.pdf`, `.txt`, and `.docx` formats.
 
@@ -42,7 +42,7 @@ Cleaner input data ensures that the model works with reliable and consistent inf
 
  **2 - Text Cleaning**
 
-   - Uses functions defined in [`data_cleaners.py`](api.md/#document_to_podcast.preprocessing.data_cleaners)
+   - Uses functions defined in [`data_cleaners.py`](api.md/#document_to_speech.preprocessing.data_cleaners)
 
    - Removes unwanted elements like URLs, email addresses, and special characters using Python's `re` library, which leverages **Regular Expressions** (regex) to identify and manipulate specific patterns in text.
 
@@ -51,7 +51,7 @@ Cleaner input data ensures that the model works with reliable and consistent inf
 ### 🔍 **API Example**
 
 ```py
-from document_to_podcast.preprocessing import DATA_CLEANERS, DATA_LOADERS
+from document_to_speech.preprocessing import DATA_CLEANERS, DATA_LOADERS
 
 input_file = "example_data/introducing-mozilla-ai-investing-in-trustworthy-ai.html"
 data_loader = DATA_LOADERS[".html"]
@@ -83,13 +83,13 @@ In this step, the pre-processed text is transformed into a conversational podcas
 
  **1 - Model Loading**
 
-   - The [`model_loader.py`](api.md/#document_to_podcast.inference.model_loaders) module is responsible for loading the `text-to-text` models using the `llama_cpp` library.
+   - The [`model_loader.py`](api.md/#document_to_speech.inference.model_loaders) module is responsible for loading the `text-to-text` models using the `llama_cpp` library.
 
    - The function `load_llama_cpp_model` takes a model ID in the format `{org}/{repo}/{filename}` and loads the specified model. This approach of using the `llama_cpp` library supports efficient CPU-based inference, making language models accessible even on machines without GPUs.
 
  **2 - Text-to-Text Generation**
 
-   - The [`text_to_text.py`](api.md/#document_to_podcast.inference.text_to_text) script manages the interaction with the language model, converting input text into a structured conversational podcast script.
+   - The [`text_to_text.py`](api.md/#document_to_speech.inference.text_to_text) script manages the interaction with the language model, converting input text into a structured conversational podcast script.
 
    - It uses the `chat_completion` function to process the input text and a customizable system prompt, guiding the language to generate a text output (e.g. a coherent podcast script between speakers).
 
@@ -101,8 +101,8 @@ In this step, the pre-processed text is transformed into a conversational podcas
 ### 🔍 **API Example**
 
 ```py
-from document_to_podcast.inference.model_loaders import load_llama_cpp_model
-from document_to_podcast.inference.text_to_text import text_to_text, text_to_text_stream
+from document_to_speech.inference.model_loaders import load_llama_cpp_model
+from document_to_speech.inference.text_to_text import text_to_text, text_to_text_stream
 
 # Load the model
 model = load_llama_cpp_model(
@@ -160,12 +160,12 @@ In this final step, the generated podcast transcript is brought to life as an au
 
  **1 - Model Loading**
 
-   - The [`model_loader.py`](api.md/#document_to_podcast.inference.model_loaders) module is responsible for loading the `text-to-text` and `text-to-speech` models.
+   - The [`model_loader.py`](api.md/#document_to_speech.inference.model_loaders) module is responsible for loading the `text-to-text` and `text-to-speech` models.
 
 
 **2 - Text-to-Speech Audio Generation**
 
-   - The [`text_to_speech.py`](api.md/#document_to_podcast.inference.text_to_speech) script converts text into audio using a specified TTS model.
+   - The [`text_to_speech.py`](api.md/#document_to_speech.inference.text_to_speech) script converts text into audio using a specified TTS model.
 
    - A **voice profile** defines the voice characteristics (e.g., tone, speed, clarity) for each speaker. This is specific to each TTS package. Kokoro models require one of the IDs specified [here](https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md).
 
@@ -175,8 +175,8 @@ In this final step, the generated podcast transcript is brought to life as an au
 
 ```py
 import soundfile as sf
-from document_to_podcast.inference.model_loaders import load_tts_model
-from document_to_podcast.inference.text_to_speech import text_to_speech
+from document_to_speech.inference.model_loaders import load_tts_model
+from document_to_speech.inference.text_to_speech import text_to_speech
 
 # Load the TTS model
 model = load_tts_model("hexgrad/Kokoro-82M", **{"lang_code": 'a'})
@@ -203,7 +203,7 @@ The `app.py` demo app is shows you how all the components of the Document-to-Pod
 This demo uses [Streamlit](https://streamlit.io/), an open-source Python framework for interactive apps.
 
 <div style="text-align: center;">
-  <img src="../images/document-to-podcast-diagram.png" alt="Project Logo" style="width: 100%; margin-bottom: 1px; margin-top: 1px;">
+  <img src="../images/document-to-speech-diagram.png" alt="Project Logo" style="width: 100%; margin-bottom: 1px; margin-top: 1px;">
 </div>
 
 

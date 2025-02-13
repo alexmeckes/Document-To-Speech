@@ -9,7 +9,7 @@ Get started with Document-to-Podcast using one of the options below:
 
       Click the button below to launch the project directly in Google Colab:
 
-      <p align="center"><a href="https://colab.research.google.com/github/mozilla-ai/document-to-podcast/blob/main/demo/notebook.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+      <p align="center"><a href="https://colab.research.google.com/github/mozilla-ai/document-to-speech/blob/main/demo/notebook.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 
 === "☁️ GitHub Codespaces"
 
@@ -28,7 +28,7 @@ Get started with Document-to-Podcast using one of the options below:
       You can install the project from Pypi:
 
       ```bash
-      pip install document-to-podcast
+      pip install document-to-speech
       ```
 
       Check the [Command Line Interface](./cli.md) guide.
@@ -40,8 +40,8 @@ Get started with Document-to-Podcast using one of the options below:
       1. **Clone the Repository**
 
          ```bash
-         git clone https://github.com/mozilla-ai/document-to-podcast.git
-         cd document-to-podcast
+         git clone https://github.com/mozilla-ai/document-to-speech.git
+         cd document-to-speech
          ```
 
       2. **Install the project and its Dependencies**

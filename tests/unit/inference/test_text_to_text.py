@@ -1,6 +1,6 @@
 import pytest
 
-from document_to_podcast.inference.text_to_text import text_to_text, text_to_text_stream
+from document_to_speech.inference.text_to_text import text_to_text, text_to_text_stream
 
 
 def test_text_to_text(mocker):

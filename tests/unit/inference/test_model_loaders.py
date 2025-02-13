@@ -4,7 +4,7 @@ import pytest
 from kokoro import KPipeline
 from llama_cpp import Llama
 
-from document_to_podcast.inference.model_loaders import (
+from document_to_speech.inference.model_loaders import (
     load_llama_cpp_model,
     load_tts_model,
 )

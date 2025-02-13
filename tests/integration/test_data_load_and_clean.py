@@ -1,9 +1,9 @@
-from document_to_podcast.preprocessing.data_cleaners import (
+from document_to_speech.preprocessing.data_cleaners import (
     clean_html,
     clean_with_regex,
     clean_markdown,
 )
-from document_to_podcast.preprocessing.data_loaders import load_pdf, load_txt
+from document_to_speech.preprocessing.data_loaders import load_pdf, load_txt
 
 
 def test_load_and_clean_pdf(example_data):

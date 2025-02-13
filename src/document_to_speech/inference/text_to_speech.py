@@ -1,7 +1,7 @@
 import numpy as np
 
-from document_to_podcast.inference.model_loaders import TTSModel, TTS_INFERENCE
-from document_to_podcast.types import SpeechParams
+from document_to_speech.inference.model_loaders import TTSModel, TTS_INFERENCE
+from document_to_speech.types import SpeechParams
 
 
 def text_to_speech(

@@ -6,7 +6,7 @@ from kokoro import KPipeline
 from llama_cpp import Llama
 import numpy as np
 
-from document_to_podcast.types import SpeechParams
+from document_to_speech.types import SpeechParams
 
 
 @dataclass
