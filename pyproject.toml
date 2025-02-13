@@ -37,9 +37,9 @@ tests = [
 ]
 
 [project.urls]
-Documentation = "https://mozilla-ai.github.io/document-to-speech/"
-Issues = "https://github.com/mozilla-ai/document-to-speech/issues"
-Source = "https://github.com/mozilla-ai/document-to-speech"
+Documentation = "https://alexmeckes.github.io/Document-To-Speech/"
+Issues = "https://github.com/alexmeckes/Document-To-Speech/issues"
+Source = "https://github.com/alexmeckes/Document-To-Speech"
 
 [tool.setuptools.packages.find]
 exclude = ["tests", "tests.*"]

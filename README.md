@@ -12,9 +12,9 @@
 # Document-to-Speech: a Blueprint by Mozilla.ai for converting documents to natural speech using local AI
 
 [![](https://dcbadge.limes.pink/api/server/YuMNeuKStr?style=flat)](https://discord.gg/YuMNeuKStr)
-[![Docs](https://github.com/mozilla-ai/document-to-speech/actions/workflows/docs.yaml/badge.svg)](https://github.com/mozilla-ai/document-to-speech/actions/workflows/docs.yaml/)
-[![Tests](https://github.com/mozilla-ai/document-to-speech/actions/workflows/tests.yaml/badge.svg)](https://github.com/mozilla-ai/document-to-speech/actions/workflows/tests.yaml/)
-[![Ruff](https://github.com/mozilla-ai/document-to-speech/actions/workflows/lint.yaml/badge.svg?label=Ruff)](https://github.com/mozilla-ai/document-to-speech/actions/workflows/lint.yaml/)
+[![Docs](https://github.com/alexmeckes/Document-To-Speech/actions/workflows/docs.yaml/badge.svg)](https://github.com/alexmeckes/Document-To-Speech/actions/workflows/docs.yaml/)
+[![Tests](https://github.com/alexmeckes/Document-To-Speech/actions/workflows/tests.yaml/badge.svg)](https://github.com/alexmeckes/Document-To-Speech/actions/workflows/tests.yaml/)
+[![Ruff](https://github.com/alexmeckes/Document-To-Speech/actions/workflows/lint.yaml/badge.svg?label=Ruff)](https://github.com/alexmeckes/Document-To-Speech/actions/workflows/lint.yaml/)
 
 This blueprint demonstrates how you can use open-source models & tools to convert input documents into natural-sounding speech.
 It is designed to work on most local setups, meaning no external API calls or GPU access is required.
@@ -35,7 +35,7 @@ This makes it more accessible and privacy-friendly by keeping everything local.
 - Optional cloud-based optimization via OpenRouter
 - User-friendly Streamlit interface
 
-### 👉 📖 For more detailed guidance on using this project, please visit our [Docs](https://mozilla-ai.github.io/document-to-speech/).
+### 👉 📖 For more detailed guidance on using this project, please visit our [Docs](https://alexmeckes.github.io/Document-To-Speech/).
 ### 👉 🔨 Built with
 - Python 3.10+ (use Python 3.10-3.12 for compatibility)
 - [Llama-cpp](https://github.com/abetlen/llama-cpp-python)
@@ -48,7 +48,7 @@ Get started right away using the Streamlit interface:
 
 ```bash
 # Clone the repository
-git clone https://github.com/mozilla-ai/document-to-speech.git
+git clone https://github.com/alexmeckes/Document-To-Speech.git
 cd document-to-speech
 
 # Create and activate virtual environment (Python 3.10 recommended)
